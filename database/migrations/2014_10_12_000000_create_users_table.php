@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('tel');
             $table->integer('age');
             $table->string('password');
-            $table->text('image_path');
+            $table->text('image_path');//nullable
             $table->rememberToken();
             $table->timestamps();
         });

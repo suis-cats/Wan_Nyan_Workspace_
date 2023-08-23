@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('top');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/top', function () {
+    return view('top');
+})->name('top');
 
 Route::get('/successfully', function () {
     return view('apply.successfully');
@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{id}', [PostController::class, 'edit'])->name('post.edit');
     Route::patch('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
+    Route::get('/post/detail', [PostController::class, 'detail'])->name('post.detail');
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
