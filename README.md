@@ -1,9 +1,9 @@
-# Relic サマーインターン（25 卒）のサンプルアプリ
+# Relicサマーインターン（25卒）のサンプルアプリ
 
 ## 初回セットアップ手順（上から順番に実行）
 
 ```sh
-# 作業ディレクトリに移動して作業を進めてください
+# 作業ディレクトリに移動して作業を進めてください 
 
 cp .env.example .env
 
@@ -29,14 +29,13 @@ docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## 停止するときは下記のコマンドを実行する。
+## 停止しないでください。
 
 ```sh
 docker-compose stop
 ```
 
 ## URL
-
 サンプルアプリ：http://localhost/
 
 phpMyAdmin: http://localhost:8080/
