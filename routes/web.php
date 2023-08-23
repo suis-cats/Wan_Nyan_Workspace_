@@ -23,6 +23,9 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/successfully', function () {
+    return view('apply.successfully');
+})->name('apply.successfully');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
