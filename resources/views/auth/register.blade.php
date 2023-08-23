@@ -16,8 +16,44 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
+        <!-- post_number -->
+        <div>
+            <x-input-label for="post_number" :value="__('郵便番号')" />
+            <x-text-input id="post_number" class="block mt-1 w-full" type="text" name="post_number" :value="old('post_number')" required autofocus autocomplete="post_number" />
+            <x-input-error :messages="$errors->get('post_number')" class="mt-2" />
+        </div>
+
+        
+        <!-- adress -->
+    <div>
+    <x-input-label for="adress" :value="__('住所')" />
+    <x-text-input id="adress" class="block mt-1 w-full" type="text" name="adress" :value="old('adress')" required autocomplete="adress" />
+    <x-input-error :messages="$errors->get('adress')" class="mt-2" />
+    </div>
+
+<!-- tel -->
+    <div>
+    <x-input-label for="tel" :value="__('電話番号')" />
+    <x-text-input id="tel" class="block mt-1 w-full" type="text" name="tel" :value="old('tel')" required autocomplete="tel" />
+    <x-input-error :messages="$errors->get('tel')" class="mt-2" />
+    </div>
+
+<!-- age -->
+    <div>
+    <x-input-label for="age" :value="__('年齢')" />
+    <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required autocomplete="age" />
+    <x-input-error :messages="$errors->get('age')" class="mt-2" />
+    </div>
+
+<!-- image_path -->
+    <div>
+    <x-input-label for="image_path" :value="__('画像のパス')" />
+    <x-text-input id="image_path" class="block mt-1 w-full" type="text" name="image_path" :value="old('image_path')" required autocomplete="image_path" />
+    <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
+    </div>
+
+    <!-- Password -->
+    <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
