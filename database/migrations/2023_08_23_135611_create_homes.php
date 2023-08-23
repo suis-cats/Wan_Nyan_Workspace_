@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('post_number');
             $table->string('adress');
-            $table->datetime('buisiness_start_time');
-            $table->datetime('buisiness_end_time');
+            $table->dateTime('buisiness_start_time');
+            $table->dateTime('buisiness_end_time');
             $table->integer('price/minute');
             $table->string('notes');
             $table->BigInteger('user_id')->unsigned();
