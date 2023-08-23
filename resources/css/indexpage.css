@@ -1,0 +1,16 @@
+.text-60px {
+    font-size: 60px; /* または任意の大きさ */
+}
+
+.text-40px {
+    font-size: 40px; /* または任意の大きさ */
+}
+
+.accept-status {
+    font-size: 2vw;
+    max-width: 12vw;
+}
+
+.faded-badge {
+    opacity: 0.7; /* 50%透明にする */
+}
