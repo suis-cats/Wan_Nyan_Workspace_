@@ -1,18 +1,51 @@
 <x-app-layout>
+    <link href="css/firstpage.css" rel="stylesheet" type="text/css">
+    @vite(['resources/css/firstpage.css'])
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             トップページ
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <a href="{{ route('post.index') }}" class="bg-white border-b border-gray-200 p-6 block w-full text-center
-                font-semibold text-gray-800 hover:bg-gray-100 text-decoration-none">
-                    掲示板へ移動
-                </a>
-            </div>
+    <style>
+      .bg-image {
+        background-image: url({{ asset('images/workspace1.jpg') }});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+      }
+    </style>
+    <div class="bg-image">
+    <div class="row">
+      <div class="col-md-6 d-flex">
+        <div class="content ml-5">
+          <p class="hello font-weight-bold display-4">ようこそ</p>
+          <p class="hello font-weight-bold display-4">
+            ワンニャンワークスペースへ！
+          </p>
+          <p class="hello font-weight-bold display-4">
+            世界一のレンタルワークスペースサイト
+          </p>
         </div>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="{{ asset('images/inu.jpeg') }}">
+      </div>
     </div>
+
+    <div class="text-center mt-10">
+      <!-- mt-5 applies a top margin of 10vh (assuming 1vh ≈ 1rem) -->
+      <button type="button" class="btn btn-dark btn-lg px-5 py-3">
+        <a href="{{ route('post.index') }}" class="text-white text-decoration-none">
+                今すぐレンタル！！
+        </a>
+      </button>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </x-app-layout>

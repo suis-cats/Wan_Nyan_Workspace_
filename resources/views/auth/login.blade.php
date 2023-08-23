@@ -1,6 +1,18 @@
 <x-guest-layout>
     <!-- Session Status -->
+    
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <style>
+
+      .bg-image {
+        background-image: url({{ asset('images/workspace1.jpg') }});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+      }
+    </style>
+     
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
