@@ -47,7 +47,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 
     Route::get('/reserve/{id}', [ReserveController::class, 'reserve'])->name('apply.reserve');
-});
+    Route::post('/reserve/store', [ReserveController::class, 'store'])->name('reserve.store');
+    });
+
 
 require __DIR__.'/auth.php';
 
