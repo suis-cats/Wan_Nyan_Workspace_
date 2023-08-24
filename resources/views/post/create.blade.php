@@ -13,7 +13,7 @@
                 <form action="{{ route('post.store') }}" method="post">
                     @csrf
                     <div class="mb-4">
-                        <h2 class="font-bold mb-4">貸す予定の物件情報</h2>
+                        <h2 class="font-bold mb-4">貸す予定のワークスペース（物件情報）</h2>
                         <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">郵便番号</label>
                         <input type="text" name="post_number" id="post_number" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
