@@ -39,7 +39,7 @@ class PostController extends Controller
         $post->adress = $validatedData['adress'];
         $post->buisiness_start_time = $validatedData['buisiness_start_time'];
         $post->buisiness_end_time = $validatedData['buisiness_end_time'];
-        $post->price/minute = $validatedData['price/minute'];
+        $post->price_per_minute = $validatedData['price_per_minute'];
         $post->notes = $validatedData['notes'];
         $post->user_id = $validatedData['user_id'];
         $post->image_path = $validatedData['image_path'];
@@ -71,7 +71,7 @@ class PostController extends Controller
             'business_start_time' => 'required|date',
             'business_end_time' => 'required|date',
             'price_per_minute' => 'required|integer',
-            'notes' => 'string',
+            'notes' => 'nullable|string',
             'user_id' => 'required|exists:users,id', // Assuming the 'users' table exists
             'image_path' => 'nullable|string',
             // Add more validation rules as needed
