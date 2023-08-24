@@ -5,7 +5,8 @@
         </h2>
     </x-slot>
 
-    <form id="reservationForm">
+
+    <form id="reservationForm" method="POST" action="{{ route('reserve.store') }}">
         @csrf
         <div class="container">
             <div class="row justify-content-center">
@@ -142,7 +143,7 @@
             var startTime = parseDateTime(startTimeStr);
             var endTime = parseDateTime(endTimeStr);
             var pricePerMinute = {{ $posts->price_per_minute }};
-            var totalMinutes = (endTime - startTime) / (1000);
+            var totalMinutes = (endTime - startTime) / (1000 * 60);
             var totalAmount = totalMinutes * pricePerMinute;
             document.getElementById('totalAmount').querySelector('span').textContent = totalAmount;
 
