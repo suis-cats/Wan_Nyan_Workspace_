@@ -1,47 +1,11 @@
 <x-app-layout>
     <!-- Scripts -->
-    @vite(['resources/css/create.css', '/DateTimeForm.js'])
+    @vite(['resources/css/create.css'])
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('新規投稿') }}
         </h2>
     </x-slot>
-
-    <script>
-        $(function () {
-            $("#datetimepicker3").datetimepicker({
-                dayViewHeaderFormat: "YYYY年 MMMM",
-                tooltips: {
-                    close: "閉じる",
-                    selectMonth: "月を選択",
-                    prevMonth: "前月",
-                    nextMonth: "次月",
-                    selectYear: "年を選択",
-                    prevYear: "前年",
-                    nextYear: "次年",
-                    selectTime: "時間を選択",
-                    selectDate: "日付を選択",
-                    prevDecade: "前期間",
-                    nextDecade: "次期間",
-                    selectDecade: "期間を選択",
-                    prevCentury: "前世紀",
-                    nextCentury: "次世紀",
-                },
-                format: "YYYY/MM/DD HH:mm",
-                locale: "ja",
-                icons: {
-                    time: "far fa-clock",
-                    date: "far fa-calendar-alt",
-                    up: "fas fa-arrow-up",
-                    down: "fas fa-arrow-down",
-                },
-                buttons: {
-                    showClose: true,
-                },
-            });
-        });
-
-    </script>
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
         <div class="my-4">
@@ -62,12 +26,11 @@
                         <div class="col-md-3 py-4">
                         <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">ワークスペース営業時間</label>
                         <p>入力形式　例　2023/08/17 11:05</p>
-                            <form class="card p-4">
                             <div class="input-group date mb-3" id="buisiness_start_time" data-target-input="nearest">
                                 <label for="datetimepicker3" class="pt-2 pr-2">開始日時：</label>
                                 <input
                                     type="text"
-                                    name="business_start_time" 
+                                    name="buisiness_start_time" 
                                     class="form-control datetimepicker-input"
                                     data-target="#datetimepicker3"
                                     id="buisiness_start_time"
@@ -80,7 +43,7 @@
                                 <label for="datetimepicker3" class="pt-2 pr-2">終了日時：</label>
                                 <input
                                     type="text"
-                                    name="business_end_time" 
+                                    name="buisiness_end_time" 
                                     class="form-control datetimepicker-input"
                                     data-target="#datetimepicker3"
                                     id="buisiness_end_time"
@@ -89,9 +52,6 @@
                                     <i class="far fa-calendar-alt"></i>
                                 </div>
                             </div>
-
-                                
-                            </form>
                         </div>
                     </div>
 
