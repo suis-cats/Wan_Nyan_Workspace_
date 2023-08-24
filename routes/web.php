@@ -43,9 +43,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{id}', [PostController::class, 'edit'])->name('post.edit');
     Route::patch('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
-    Route::get('/reserve/{id}', [ReserveController::class, 'reserve'])->name('apply.reserve');
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
+
+    Route::get('/reserve/{id}', [ReserveController::class, 'reserve'])->name('apply.reserve');
 });
 
 require __DIR__.'/auth.php';

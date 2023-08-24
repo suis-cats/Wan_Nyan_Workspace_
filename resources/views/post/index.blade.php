@@ -47,19 +47,19 @@
 
                                         <!-- 枠 -->
                                         <div>
-    <!-- 追加した部分 -->
-    <p>郵便番号: {{ $post->post_number }}</p>
-    <p>住所: {{ $post->adress }}</p>
-    <p>営業開始時間: {{ $post->buisiness_start_time }}</p>
-    <p>営業終了時間: {{ $post->buisiness_end_time }}</p>
-    <p>備考: {{ $post->notes }}</p>
-    @if($post->image_path)
-        <img src="{{ asset($post->image_path) }}" alt="ワークスペースの画像">
-    @endif
-    <p>料金(1分あたり): {{ $post->price_per_minute }}円</p>
-    <!-- ここまで -->
+                                            <!-- 追加した部分 -->
+                                            <p>郵便番号: {{ $post->post_number }}</p>
+                                            <p>住所: {{ $post->adress }}</p>
+                                            <p>営業開始時間: {{ $post->buisiness_start_time }}</p>
+                                            <p>営業終了時間: {{ $post->buisiness_end_time }}</p>
+                                            <p>備考: {{ $post->notes }}</p>
+                                            @if($post->image_path)
+                                                <img src="{{ asset($post->image_path) }}" alt="ワークスペースの画像">
+                                            @endif
+                                            <p>料金(1分あたり): {{ $post->price_per_minute }}円</p>
+                                            <!-- ここまで -->
 
-</div>
+                                        </div>
 
 
                                     </div>
@@ -67,7 +67,8 @@
 
                                     <div class="mt-auto d-flex flex-column justify-content-end">
                                         <a
-                                            href="/reserve/{{ $post->id }}"
+                                            
+                                            href="{{ route('apply.reserve', ['id' => $post->id]) }} }}"
                                             class="inline-block py-2 px-4 btn btn-success text-decoration-none mb-2"
                                         >
                                             {{ __('予約する') }}
