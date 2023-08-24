@@ -53,6 +53,11 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'adress' => ['required', 'string', 'max:500'],  // 住所
+            'tel' => ['required', 'string', 'max:20'],  // 電話番号
+            'age' => ['required', 'integer', 'min:0', 'max:150'],  // 年齢
+            'image_path' => ['nullable', 'string', 'max:1000'],  // 画像のパス
+            'post_number' => ['required', 'string', 'max:20'],  // 郵便番号
         ]);
     }
 
@@ -69,6 +74,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'adress' => $data['adress'],  // 住所
+            'tel' => $data['tel'],  // 電話番号
+            'age' => $data['age'],  // 年齢
+            'image_path' => $data['image_path'] ?? null,  // 画像のパス (nullableなので存在しない場合はnullをセット)
+            'post_number' => $data['post_number'],  // 郵便番号
         ]);
     }
 }
