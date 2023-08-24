@@ -10,8 +10,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('updated_at', 'desc')->get();
-        return view('post.index', compact('posts'));
+        $post = Post::orderBy('updated_at', 'desc')->get();
+        return view('post.index', compact('post'));
     }
 
     public function create()
@@ -19,10 +19,6 @@ class PostController extends Controller
         return view('post.create');
     }
 
-    public function detail()
-    {
-        return view('post.detail');
-    }
 
     
 
@@ -47,10 +43,7 @@ class PostController extends Controller
         $post->buisiness_end_time = $validatedData['buisiness_end_time'];
         $post->price_per_minute = $validatedData['price_per_minute'];
         $post->notes = $validatedData['notes'];
-        $post->user_id = $validatedData['user_id'];
         $post->image_path = $validatedData['image_path'];
-        $post->created_at = $validatedData['created_at'];
-        $post->updated_at = $validatedData['updated_at'];
         $post->user_id = Auth::id();
         $post->save();
 
@@ -59,8 +52,8 @@ class PostController extends Controller
 
     public function myPosts()
     {
-        $posts = Post::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
-        return view('my-posts', compact('posts'));
+        $post = Post::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
+        return view('my-post', compact('post'));
     }
 
     public function edit($id)
@@ -84,14 +77,14 @@ class PostController extends Controller
         ]);
 
         $post = Post::findOrFail($id);
-        $home->post_number = $validatedData['post_number'];
-        $home->adress = $validatedData['adress'];
-        $home->business_start_time = $validatedData['business_start_time'];
-        $home->business_end_time = $validatedData['business_end_time'];
-        $home->price_per_minute = $validatedData['price_per_minute'];
-        $home->notes = $validatedData['notes'];
-        $home->user_id = $validatedData['user_id'];
-        $home->image_path = $validatedData['image_path'];
+        $post->post_number = $validatedData['post_number'];
+        $post->adress = $validatedData['adress'];
+        $post->business_start_time = $validatedData['business_start_time'];
+        $post->business_end_time = $validatedData['business_end_time'];
+        $post->price_per_minute = $validatedData['price_per_minute'];
+        $post->notes = $validatedData['notes'];
+        $post->user_id = $validatedData['user_id'];
+        $post->image_path = $validatedData['image_path'];
         // Update other columns as needed
         $post->save();
 

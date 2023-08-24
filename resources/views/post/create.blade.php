@@ -63,57 +63,42 @@
                         <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">ワークスペース営業時間</label>
                         <p>入力形式　例　2023/08/17 11:05</p>
                             <form class="card p-4">
-                                <div
-                                    class="input-group date mb-3"
+                            <div class="input-group date mb-3" id="buisiness_start_time" data-target-input="nearest">
+                                <label for="datetimepicker3" class="pt-2 pr-2">開始日時：</label>
+                                <input
+                                    type="text"
+                                    name="business_start_time" 
+                                    class="form-control datetimepicker-input"
+                                    data-target="#datetimepicker3"
                                     id="buisiness_start_time"
-                                    data-target-input="nearest"
-                                >
-                                    
-                                    <label for="datetimepicker3" class="pt-2 pr-2">開始日時：</label>
-                                    <input
-                                        type="text"
-                                        class="form-control datetimepicker-input"
-                                        data-target="#datetimepicker3"
-                                        id="buisiness_start_time"
-                                    />
-                                    <div
-                                        class="input-group-text"
-                                        data-target="#datetimepicker3"
-                                        data-toggle="datetimepicker"
-                                    >
-                                        <i class="far fa-calendar-alt"></i>
-                                    </div>
+                                />
+                                <div class="input-group-text" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                    <i class="far fa-calendar-alt"></i>
                                 </div>
-                                <div
-                                    class="input-group date mb-3"
+                            </div>
+                            <div class="input-group date mb-3" id="buisiness_end_time" data-target-input="nearest">
+                                <label for="datetimepicker3" class="pt-2 pr-2">終了日時：</label>
+                                <input
+                                    type="text"
+                                    name="business_end_time" 
+                                    class="form-control datetimepicker-input"
+                                    data-target="#datetimepicker3"
                                     id="buisiness_end_time"
-                                    data-target-input="nearest"
-                                >
-                                    
-                                    <label for="datetimepicker3" class="pt-2 pr-2">終了日時：</label>
-                                    <input
-                                        type="text"
-                                        class="form-control datetimepicker-input"
-                                        data-target="#datetimepicker3"
-                                        id="buisiness_end_time"
-                                    />
-                                    <div
-                                        class="input-group-text"
-                                        data-target="#datetimepicker3"
-                                        data-toggle="datetimepicker"
-                                    >
-                                        <i class="far fa-calendar-alt"></i>
-                                    </div>
-                                    
+                                />
+                                <div class="input-group-text" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                    <i class="far fa-calendar-alt"></i>
                                 </div>
+                            </div>
+
+                                
                             </form>
                         </div>
                     </div>
 
                     <div class="mb-4">
                         
-                        <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">料金設定</label>
-                        <input type="text" name="post_number" id="post_number" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <label for="price_per_minute" class="block text-gray-700 text-sm font-bold mb-2">料金設定</label>
+                        <input type="text" name="price_per_minute" id="price_per_minute" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
 
 
