@@ -5,9 +5,10 @@
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{ __('レンタルワークスペース') }}
     </h2>
-    <a href="" class="inline-block ml-4 py-2 px-4 btn btn-outline-secondary text-decoration-none">
-        {{ __('　　検索する　　') }}
-    </a>
+    <div class="ml-5 input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary px-5" type="button" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
+    </div>
 </div>
 
     </x-slot>
