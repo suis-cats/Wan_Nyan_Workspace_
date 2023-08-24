@@ -27,6 +27,10 @@ Route::get('/successfully', function () {
     return view('apply.successfully');
 })->name('apply.successfully');
 
+Route::get('/draft', function () {
+    return view('post.draft');
+})->name('post.draft');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

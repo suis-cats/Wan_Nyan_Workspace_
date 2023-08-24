@@ -28,11 +28,10 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'post_number' => 'required|string',
             'adress' => 'required|string',
-            'business_start_time' => 'required|date',
-            'business_end_time' => 'required|date',
+            'buisiness_start_time' => 'required|date_format:Y-m-d H:i:s',
+            'buisiness_end_time' => 'required|date_format:Y-m-d H:i:s',
             'price_per_minute' => 'required|integer',
             'notes' => 'nullable|string',
-            'user_id' => 'required|exists:users,id', // Assuming the 'users' table exists
             'image_path' => 'nullable|string',
         ]);
 
