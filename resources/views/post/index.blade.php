@@ -38,19 +38,28 @@
                                 </div>
                                 <div class="col-md-6 d-flex flex-column">
                                     <div>
-                                        <!-- <h3 class="text-lg font-bold mb-2 border-bottom">{{ $post->title }}</h3>
+                                        <h3 class="text-lg font-bold mb-2 border-bottom">{{ $post->title }}</h3>
                                         <p class="text-gray-1000 mt-4">{{ $post->body }}</p>
                                         <div class="flex justify-between mt-8">
                                             <p class="text-gray-600">{{ $post->user->name }}</p>
                                             <p class="text-gray-600">{{ $post->updated_at }}</p>
-                                        </div> -->
+                                        </div>
 
                                         <!-- 枠 -->
-                                        <p class="text-40px">富山県新富町</p>
-                                        <p>営業時間</p>
-                                        <p class="text-40px">08:00~10:00</p>
-                                        <p>料金</p>
-                                        <p class="text-40px">250円/15分</p>
+                                        <div>
+    <!-- 追加した部分 -->
+    <p>郵便番号: {{ $post->post_number }}</p>
+    <p>住所: {{ $post->adress }}</p>
+    <p>営業開始時間: {{ $post->buisiness_start_time }}</p>
+    <p>営業終了時間: {{ $post->buisiness_end_time }}</p>
+    <p>備考: {{ $post->notes }}</p>
+    @if($post->image_path)
+        <img src="{{ asset($post->image_path) }}" alt="ワークスペースの画像">
+    @endif
+    <p>料金(1分あたり): {{ $post->price_per_minute }}円</p>
+    <!-- ここまで -->
+
+</div>
 
 
                                     </div>
