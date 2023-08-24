@@ -67,7 +67,7 @@
 
                                     <div class="mt-auto d-flex flex-column justify-content-end">
                                         <a
-                                            href=""
+                                            href="/reserve/{{ $post->id }}"
                                             class="inline-block py-2 px-4 btn btn-success text-decoration-none mb-2"
                                         >
                                             {{ __('予約する') }}
