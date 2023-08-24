@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReserveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{id}', [PostController::class, 'edit'])->name('post.edit');
     Route::patch('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
-
-    Route::get('/post/detail', [PostController::class, 'detail'])->name('post.detail');
+    Route::get('/reserve/{id}', [ReserveController::class, 'reserve'])->name('apply.reserve');
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
