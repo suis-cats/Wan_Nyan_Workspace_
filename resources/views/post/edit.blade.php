@@ -10,17 +10,17 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body mt-4">
-                        <form method="POST" action="{{ route('post.update', $post->id) }}">
+                        <form method="POST" action="{{ route('post.update', $posts->id) }}">
                             @csrf
                             @method('PATCH')
 
                             <div class="form-group row">
-                                <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('タイトル') }}</label>
+                                <label for="post_number" class="col-md-4 col-form-label text-md-right">{{ __('郵便番号') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $post->title) }}" required autocomplete="title" autofocus>
+                                    <input id="post_number" type="text" class="form-control @error('post_number') is-invalid @enderror" name="post_number" value="{{ old('post_number', $posts->post_number) }}" required autofocus>
 
-                                    @error('title')
+                                    @error('post_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -28,13 +28,41 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row my-4">
-                                <label for="body" class="col-md-4 col-form-label text-md-right">{{ __('本文') }}</label>
+                            <div class="form-group row">
+                                <label for="adress" class="col-md-4 col-form-label text-md-right">{{ __('住所') }}</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="body" class="form-control @error('body') is-invalid @enderror" name="body" required>{{ old('body', $post->body) }}</textarea>
+                                    <input id="adress" type="text" class="form-control @error('adress') is-invalid @enderror" name="adress" value="{{ old('adress', $posts->adress) }}" required>
 
-                                    @error('body')
+                                    @error('adress')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('名前') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $posts->name) }}" required>
+
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('電話番号') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="tel" type="text" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel', $posts->tel) }}" required>
+
+                                    @error('tel')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
