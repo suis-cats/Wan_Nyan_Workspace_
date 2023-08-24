@@ -25,7 +25,7 @@
                     <div class="container">
                         <div class="col-md-3 py-4">
                         <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">ワークスペース営業時間</label>
-                        <p>入力形式　例　2023/08/17 11:05</p>
+                        <p>入力形式　例　2023-04-08 23:08:14</p>
                             <div class="input-group date mb-3" id="buisiness_start_time" data-target-input="nearest">
                                 <label for="datetimepicker3" class="pt-2 pr-2">開始日時：</label>
                                 <input
