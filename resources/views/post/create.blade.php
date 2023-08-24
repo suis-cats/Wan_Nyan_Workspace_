@@ -71,13 +71,13 @@
                     </div>
                     <!-- image_path -->
                     <div class="mb-4">
-                        <x-input-label for="image_path" :value="__('画像のパス')" />
-                        <x-text-input id="image_path" class="block mt-1 w-full" type="text" name="image_path" :value="old('image_path')" autocomplete="image_path" />
+                        <!-- <x-input-label for="image_path" :value="__('画像のパス')" /> -->
+                        <x-text-input id="image_path" class="block mt-1 w-full" type="hidden" name="image_path" :value="old('image_path')" autocomplete="image_path" />
                         <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
                     </div>
 
                     <div class="flex justify-end">
-                        <button type="submit" class="py-2 px-4 btn btn-primary">投稿する</button>
+                        <button type="submit" class="py-2 px-4 btn btn-success">投稿する</button>
                         <a href="{{ route('post.index') }}" class="py-2 px-4 ml-4 btn btn-secondary">キャンセル</a>
                     </div>
 
