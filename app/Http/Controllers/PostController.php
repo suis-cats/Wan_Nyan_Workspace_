@@ -30,8 +30,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'post_number' => 'required|string',
+            'adress' => 'required|string',
+            'business_start_time' => 'required|date',
+            'business_end_time' => 'required|date',
+            'price_per_minute' => 'required|integer',
+            'notes' => 'nullable|string',
+            'user_id' => 'required|exists:users,id', // Assuming the 'users' table exists
+            'image_path' => 'nullable|string',
         ]);
 
         $post = new Post();
