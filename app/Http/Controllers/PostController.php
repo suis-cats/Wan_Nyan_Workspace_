@@ -51,14 +51,14 @@ class PostController extends Controller
 
     public function myPosts()
     {
-        $post = Post::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
-        return view('my-post', compact('post'));
+        $posts = Post::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
+        return view('my-posts', compact('posts'));
     }
 
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        return view('post.edit', compact('post'));
+        $posts = Post::findOrFail($id);
+        return view('post.edit', compact('posts'));
     }
 
     public function update(Request $request, $id)
