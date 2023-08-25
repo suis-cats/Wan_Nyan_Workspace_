@@ -126,8 +126,8 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" name="post_id" value="{{ $posts->id }}">
-        <input type="hidden" name="hostuser_id" value="{{ $posts->user->name }}">
+        <input type="hidden" name="post_id" value="{{ $posts-> id }}">
+        <input type="text" name="hostuser_id" value="{{ $posts-> user_id}}">
     </form>
 
     <script>

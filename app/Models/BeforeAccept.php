@@ -12,6 +12,7 @@ class BeforeAccept extends Model
      */
     protected $table = 'before_accept';
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -29,9 +30,9 @@ class BeforeAccept extends Model
     /**
      * Get the home associated with the BeforeAccept.
      */
-    public function home()
+    public function posts()
     {
-        return $this->belongsTo(Home::class, 'home_id');
+        return $this->belongsTo(Post::class, 'post_id');
     }
 
     /**
