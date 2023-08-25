@@ -1,15 +1,28 @@
 <x-app-layout>
     @vite(['resources/css/indexpage.css'])
     <x-slot name="header">
-    <div class="d-flex justify-content-between align-items-center">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('レンタルワークスペース') }}
-    </h2>
-    <div class="ml-5 input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary px-5" type="button" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left-aligned h2 -->
+            <div class="col-md-5">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    {{ __('わんにゃんレンタルワークスペース') }}
+                </h2>
+            </div>
+            
+            <!-- Right-aligned search bar with reduced width -->
+            <div class="col-md-7 d-flex justify-content-end">
+                <div class="input-group" style="max-width: 80vh;">
+                    <input type="text" class="form-control" placeholder="キーワードを入力">
+                    <button class="btn btn-outline-secondary px-5" type="button" id="button-addon2">
+                        <i class="fas fa-search"></i> 検索
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
 
     </x-slot>
 
@@ -39,25 +52,28 @@
                                 </div>
                                 <div class="col-md-6 d-flex flex-column">
                                     <div>
-                                        <h3 class="text-lg font-bold mb-2 border-bottom">{{ $post->title }}</h3>
-                                        <p class="text-gray-1000 mt-4">{{ $post->body }}</p>
-                                        <div class="flex justify-between mt-8">
-                                            <p class="text-gray-600">{{ $post->user->name }}</p>
-                                            <p class="text-gray-600">{{ $post->updated_at }}</p>
-                                        </div>
+                        
+                                       
 
                                         <!-- 枠 -->
                                         <div>
                                             <!-- 追加した部分 -->
-                                            <p>郵便番号: {{ $post->post_number }}</p>
-                                            <p>住所: {{ $post->adress }}</p>
-                                            <p>営業開始時間: {{ $post->buisiness_start_time }}</p>
-                                            <p>営業終了時間: {{ $post->buisiness_end_time }}</p>
-                                            <p>備考: {{ $post->notes }}</p>
+                                            <!-- <p>郵便番号: {{ $post->post_number }}</p> -->
+                                            <!-- <p>住所</p> -->
+                                            <p class="text-40px">{{ $post->adress }}</p>
+                                            <p>営業時間: {{ $post->buisiness_start_time }}</p>
+                                            <p class="text-right">〜 {{ $post->buisiness_end_time }}　　　　</p>
+                                            <!-- <p>備考: {{ $post->notes }}</p> -->
                                             @if($post->image_path)
                                                 <img src="{{ asset($post->image_path) }}" alt="ワークスペースの画像">
                                             @endif
-                                            <p>料金(1分あたり): {{ $post->price_per_minute }}円</p>
+                                            <p>利用料金</p>
+                                            <p class="text-right text-60px"> {{ $post->price_per_minute * 15 }}円 / 15分</p>
+
+                                            <div class="flex justify-between mt-8">
+                                                <p class="text-gray-600">オーナー：{{ $post->user->name }}</p>
+                                                <p class="text-gray-600">POST更新：{{ $post->updated_at }}</p>
+                                            </div>
                                             <!-- ここまで -->
 
                                         </div>

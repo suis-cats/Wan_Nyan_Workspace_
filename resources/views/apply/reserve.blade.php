@@ -63,7 +63,7 @@
                                                                 <label for="cardNumber">
                                                                     <h6>カード番号</h6>
                                                                 </label>
-                                                                <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                                                <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control ">
                                                                     <div class="input-group-append"></div>
                                                                 </div>
                                                             </div>
@@ -73,14 +73,14 @@
                                                                         <label><span class="hidden-xs">
                                                                                 <h6>有効期限</h6>
                                                                             </span></label>
-                                                                        <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                                        <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control"> <input type="number" placeholder="YY" name="" class="form-control"> </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <div class="form-group mb-4">
                                                                         <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
                                                                             <h6>セキュリティコード <i class="fa fa-question-circle d-inline"></i></h6>
-                                                                        </label> <input type="text" required class="form-control"> </div>
+                                                                        </label> <input type="text" class="form-control"> </div>
                                                                 </div>
                                                             </div>
                                                         </div>
