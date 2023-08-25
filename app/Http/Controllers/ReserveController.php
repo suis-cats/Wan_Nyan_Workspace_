@@ -20,7 +20,14 @@ class ReserveController extends Controller
             'end_time' => 'required|date_format:Y-m-d H:i:s',
             'total_amount' => 'required|integer',
         ]);
-    
+        $accept = new BeforeAccept();
+        $accept->post_id = $validatedData['post_id'];
+        $accept->start_time = $validatedData['start_time'];
+        $accept->end_time = $validatedData['end_time'];
+        $accept->total_amount = $validatedData['total_amount'];
+        $accept->hostuser_id = $validatedData['hostuser_id'];
+        $accept->user_id = Auth::id();
+        $accept->save();
 
         // before_acceptテーブルにデータを保存
         BeforeAccept::create($data);

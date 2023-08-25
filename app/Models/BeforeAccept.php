@@ -18,7 +18,7 @@ class BeforeAccept extends Model
      * @var array
      */
     protected $fillable = [
-        'home_id',
+        'post_id',
         'user_id',
         'hostuser_id',
         'start_time',
