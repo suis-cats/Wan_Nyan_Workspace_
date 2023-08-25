@@ -124,14 +124,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="text" name="post_id" value="{{ $posts->id }}">
-                                <input type="text" name="hostuser_id" value="{{ $posts-> user_id }}">
+                                
                             </div>
                         <button type="submit" class="mb-5 btn btn-success">予約する</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <input type="hidden" name="post_id" value="{{ $posts-> id }}">
+        <input type="hidden" name="hostuser_id" value="{{ $posts-> user_id}}">
 
     </form>
 
