@@ -17,11 +17,25 @@ use Illuminate\View\View;
 class ReserveController extends Controller
 {
     // 他のメソッドもここにあります...
+
+    
+
+    public function index()
+    {
+        $beforeAccepts = BeforeAccept::all();
+        return view('index', compact('beforeAccepts'));
+    }
+
+
+
+
+
     public function reserve($id) 
-{
-    $post = Post::find($id);  // 仮定していますが、Postモデルを使用してIDベースでポストを取得
-    return view('apply.reserve', ['posts' => $post]);
-}
+    {
+        $post = Post::find($id);  // 仮定していますが、Postモデルを使用してIDベースでポストを取得
+        return view('apply.reserve', ['posts' => $post]);
+    }
+    
     public function store(Request $request)
     {
         $validatedData = $request->validate([

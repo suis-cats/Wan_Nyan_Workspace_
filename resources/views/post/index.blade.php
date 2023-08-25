@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+    
 
 
 
@@ -107,9 +108,9 @@
             @endif
 
             <p class="">予約したワークスペース</p>
-            @if (!empty($posts))
+            @if (!empty($beforeAccepts))
                 <ul>
-                    @foreach ($posts as $post)
+                    @foreach ($beforeAccepts as $beforeAccepts)
                     <ul>
                         <li class="mb-6 bg-white border rounded-lg p-4">
                             <div class="row">
