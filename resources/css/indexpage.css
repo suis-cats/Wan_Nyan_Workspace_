@@ -6,6 +6,10 @@
     font-size: 40px; /* または任意の大きさ */
 }
 
+.text-26px {
+    font-size: 26px; /* または任意の大きさ */
+}
+
 .accept-status {
     font-size: 2vw;
     max-width: 12vw;

@@ -47,7 +47,7 @@
 
     <!-- image_path -->
         <div>
-        <x-input-label for="image_path" :value="__('画像のパス')" />
+        <!-- <x-input-label for="image_path" :value="__('画像のパス')" /> -->
         <x-text-input id="image_path" class="block mt-1 w-full" type="hidden" name="image_path" :value="old('image_path')" autocomplete="image_path" />
         <x-input-error :messages="$errors->get('image_path')" class="mt-2" />
         </div>

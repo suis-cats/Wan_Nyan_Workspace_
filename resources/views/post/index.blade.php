@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+    
 
 
 
@@ -60,14 +61,14 @@
                                             <!-- 追加した部分 -->
                                             <!-- <p>郵便番号: {{ $post->post_number }}</p> -->
                                             <!-- <p>住所</p> -->
-                                            <p class="text-40px">{{ $post->adress }}</p>
-                                            <p>営業時間: {{ $post->buisiness_start_time }}</p>
-                                            <p class="text-right">〜 {{ $post->buisiness_end_time }}　　　　</p>
+                                            <p class="text-40px">{{ $post-> adress }}</p>
+                                            <p class="text-26px">営業時間　 {{ date('m/d H:i', strtotime($post->start_time)) }}　〜　{{ date('m/d H:i', strtotime($post->start_time)) }}</p>
+                                            
                                             <!-- <p>備考: {{ $post->notes }}</p> -->
                                             @if($post->image_path)
                                                 <img src="{{ asset($post->image_path) }}" alt="ワークスペースの画像">
                                             @endif
-                                            <p>利用料金</p>
+                                            <p class="text-26px mb-1">利用料金</p>
                                             <p class="text-right text-60px"> {{ $post->price_per_minute * 15 }}円 / 15分</p>
 
                                             <div class="flex justify-between mt-8">
@@ -107,9 +108,11 @@
             @endif
 
             <p class="">予約したワークスペース</p>
-            @if (!empty($posts))
+            
+            @if (!empty($beforeAccepts))
                 <ul>
-                    @foreach ($posts as $post)
+                    @foreach ($beforeAccepts as $beforeAccept)
+                    
                     <ul>
                         <li class="mb-6 bg-white border rounded-lg p-4">
                             <div class="row">
@@ -121,11 +124,20 @@
                                 <div class="col-md-6 d-flex flex-column">
                                     
                                     <!-- 枠 -->
-                                    <p class="text-40px">富山県新富町</p>
-                                    <p>予約時間</p>
-                                    <p class="text-60px">08:00~10:00</p>
+                                    <p class="text-40px">{{ $posts->find($beforeAccept->post_id)-> adress }}</p>
+                                    
+
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="text-26px mb-1">予約時間</p>
+                                        <span class="badge faded-badge bg-info accept-status mb-3">予約済み</span>
+                                    </div>
+
+                                    
+                                    <p class="text-60px">{{ date('m/d H:i', strtotime($beforeAccept->start_time)) }}</p>
+                                    <p class="text-60px">　　〜{{ date('m/d H:i', strtotime($beforeAccept->end_time)) }}</p>
+
                                     <!-- <span class="badge faded-badge bg-danger accept-status">未承認</span> -->
-                                    <span class="badge faded-badge bg-info accept-status">承認済み</span>
+                                    
 
 
 

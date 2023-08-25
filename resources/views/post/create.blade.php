@@ -25,7 +25,7 @@
                     <div class="container">
                         <div class="col-md-3 py-4">
                         <label for="post_number" class="block text-gray-700 text-sm font-bold mb-2">ワークスペース営業時間</label>
-                        <p>入力形式　例　2023-04-08 23:08:14</p>
+                        <p>入力形式　例　2023-08-25 10:00:00</p>
                             <div class="input-group date mb-3" id="buisiness_start_time" data-target-input="nearest">
                                 <label for="datetimepicker3" class="pt-2 pr-2">開始日時：</label>
                                 <input
@@ -57,7 +57,7 @@
 
                     <div class="mb-4">
                         
-                        <label for="price_per_minute" class="block text-gray-700 text-sm font-bold mb-2">料金設定</label>
+                        <label for="price_per_minute" class="block text-gray-700 text-sm font-bold mb-2">料金設定（１分あたり）</label>
                         <input type="text" name="price_per_minute" id="price_per_minute" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                     </div>
 
