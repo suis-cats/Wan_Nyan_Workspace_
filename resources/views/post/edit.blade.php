@@ -44,7 +44,7 @@
                             <div class="form-group row">
                                 <label for="buisiness_start_time" class="col-md-4 col-form-label text-md-right">{{ __('営業開始時間') }}</label>
                                 <div class="col-md-6">
-                                    <input id="buisiness_start_time" type="datetime-local" class="form-control @error('buisiness_start_time') is-invalid @enderror" name="buisiness_start_time" value="{{ old('buisiness_start_time', $posts->buisiness_start_time) }}" required>
+                                    <input id="buisiness_start_time" type="text" class="form-control @error('buisiness_start_time') is-invalid @enderror" name="buisiness_start_time" value="{{ old('buisiness_start_time', $posts->buisiness_start_time) }}" required>
                                     @error('buisiness_start_time')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                             <div class="form-group row">
                                 <label for="buisiness_end_time" class="col-md-4 col-form-label text-md-right">{{ __('営業終了時間') }}</label>
                                 <div class="col-md-6">
-                                    <input id="buisiness_end_time" type="datetime-local" class="form-control @error('buisiness_end_time') is-invalid @enderror" name="buisiness_end_time" value="{{ old('buisiness_end_time', $posts->buisiness_end_time) }}" required>
+                                    <input id="buisiness_end_time" type="text" class="form-control @error('buisiness_end_time') is-invalid @enderror" name="buisiness_end_time" value="{{ old('buisiness_end_time', $posts->buisiness_end_time) }}" required>
                                     @error('buisiness_end_time')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

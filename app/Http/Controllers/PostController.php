@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BeforeAccept;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,8 +11,9 @@ class PostController extends Controller
 {
     public function index()
     {
+        $beforeAccepts = BeforeAccept::where('user_id', Auth::id())->get();
         $posts = Post::orderBy('updated_at', 'desc')->get();
-        return view('post.index', compact('posts'));
+        return view('post.index', compact('posts','beforeAccepts'));
     }
 
     public function create()
@@ -92,6 +94,8 @@ class PostController extends Controller
 
     public function destroy($id)
     {
+        \DB::table('before_accept')->where('post_id', $id)->delete();
+
         $post = Post::findOrFail($id);
         $post->delete();
 
