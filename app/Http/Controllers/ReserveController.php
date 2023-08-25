@@ -15,13 +15,12 @@ class ReserveController extends Controller
 }
     public function store(Request $request)
     {
-        // リクエストからデータを受け取る
-        $data = $request->all();
-
-        // 必要な追加情報を取得・設定する
-        $data['user_id'] = auth()->id();
-        $data['home_id'] = ...;  // これはどのように取得するかによります
-        $data['hostuser_id'] = ...;  // これはどのように取得するかによります
+        $validatedData = $request->validate([
+            'start_time' => 'required|date_format:Y-m-d H:i:s',
+            'end_time' => 'required|date_format:Y-m-d H:i:s',
+            'total_amount' => 'required|integer',
+        ]);
+    
 
         // before_acceptテーブルにデータを保存
         BeforeAccept::create($data);
