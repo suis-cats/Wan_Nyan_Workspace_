@@ -12,16 +12,20 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-body mt-2">
+                        <div class="card-body">
+                        <h1 class="t-4 font-bold mb-4">ワークスペースの詳細情報</h1>
                             <h2>{{ $posts->name }}</h2>
-                            <h2 class="font-bold">郵便番号: {{ $posts->post_number }}</h2>
-                            <h2>住所: {{ $posts->adress }}</h2>
-                            <h2>営業開始時間: {{ $posts->buisiness_start_time }}</h2>
-                            <h2>営業終了時間: {{ $posts->buisiness_end_time }}</h2>
-                            <h2>料金(1分あたり): {{ $posts->price_per_minute }}円</h2>
+                            <p class="text-lg font-bold mb-1">ワークスペースの所在地</p>
+                            <h2 class="mb-3">〒 {{ $posts->post_number }}　{{ $posts->adress }}</h2>
+                            <p class="text-lg font-bold mb-1">営業開始時間</p>
+                            <h2 class="mb-3">{{ $posts->buisiness_start_time }}　〜　{{ $posts->buisiness_end_time }}</h2>
+                            <p class="text-lg font-bold mb-1">料金(1分あたり)</p>
+                            
+
+                            <h2 class="mb-3">{{ $posts->price_per_minute }}円</h2>
                             <h2>備考: {{ $posts->notes }}</h2>
                             <div class="mb-4">
-                                <p>入力形式　例　2023-04-08 23:08:14</p>
+                                <p>入力形式　例　2023-08-25 10:00:00</p>
                                 <label for="start_time" class="block text-gray-700 text-xl font-bold mb-2">利用開始日時：</label>
                                 <input type="text" name="start_time" id="start_time" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
                             </div>
@@ -120,14 +124,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="text" name="post_id" value="{{ $posts->id }}">
+                                <input type="text" name="hostuser_id" value="{{ $posts-> user_id }}">
                             </div>
                         <button type="submit" class="mb-5 btn btn-success">予約する</button>
                     </div>
                 </div>
             </div>
         </div>
-        <input type="hidden" name="post_id" value="{{ $posts->id }}">
-        <input type="hidden" name="hostuser_id" value="{{ $posts->user->name }}">
+
     </form>
 
     <script>

@@ -29,9 +29,6 @@ class ReserveController extends Controller
         $accept->user_id = Auth::id();
         $accept->save();
 
-        // before_acceptテーブルにデータを保存
-        BeforeAccept::create($data);
-
         // 保存後のリダイレクトやその他のアクション
         return redirect()->route('apply.successfully')->with('success', '予約が完了しました。');
     }
