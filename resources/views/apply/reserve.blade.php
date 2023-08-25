@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div>
-
+        <input type="hidden" name="post_id" value="{{ $posts->id }}">
     </form>
 
     <script>
