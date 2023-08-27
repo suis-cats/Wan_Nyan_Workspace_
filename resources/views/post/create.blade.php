@@ -58,7 +58,10 @@
                     <div class="mb-4">
                         
                         <label for="price_per_minute" class="block text-gray-700 text-sm font-bold mb-2">料金設定（１分あたり）</label>
-                        <input type="text" name="price_per_minute" id="price_per_minute" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                        <div class="d-flex align-items-center">
+                            <input type="text" name="price_per_minute" id="price_per_minute" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
+                            <p class="ml-2 mt-3">円</p>
+                        </div>
                     </div>
 
 

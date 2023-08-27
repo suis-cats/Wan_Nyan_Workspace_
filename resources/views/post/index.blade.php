@@ -107,9 +107,9 @@
             </div>
             @endif
 
-            <p class="">予約したワークスペース</p>
+            <p>自分の予約したワークスペース</p>
             
-            @if (!empty($beforeAccepts))
+                @if (!$beforeAccepts->isEmpty())
                 <ul>
                     @foreach ($beforeAccepts as $beforeAccept)
                     
@@ -160,9 +160,9 @@
                 </ul>
 
             @else
-            <div class="flex justify-center items-center h-full">
+                <div class="flex justify-center items-center h-96">
                     <p class="text-lg text-gray-600">予約はありません。</p>
-            </div>
+                </div>
             @endif
         </div>
     </div>
