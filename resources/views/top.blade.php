@@ -13,18 +13,18 @@
     </style>
     <div class="bg-image">
       <div class="row">
-        <div class="col-md-6 d-flex">
+        <div class="col-md-8 d-flex">
           <div class="content ml-5">
             <p class="hello font-weight-bold display-4">ようこそ</p>
             <p class="hello font-weight-bold display-4">
               ワンニャンワークスペースへ！
             </p>
-            <p class="hello font-weight-bold display-4">
+            <p class="hello font-weight-bold display-4 work">
               世界一のレンタルワークスペースサイト
             </p>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
           <img src="{{ asset('images/inu.png') }}">
         </div>
       </div>

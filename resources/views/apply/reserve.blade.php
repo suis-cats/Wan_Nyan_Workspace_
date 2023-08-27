@@ -23,8 +23,12 @@
                             
 
                             <h2 class="mb-3">{{ $posts->price_per_minute }}円</h2>
-                            <h2>備考: {{ $posts->notes }}</h2>
+                            <h2 class="mb-1 text-lg  font-bold">備考: </h2>
+                            <h2 class="mb-5">{{ $posts->notes }}</h2>
+
+                            <h1 class="t-4 font-bold mb-4">利用時間の入力</h1>
                             <div class="mb-4">
+                                <p class="mb-1 underline-text">フォーマット　年-月-日　時間-日付-秒</p>
                                 <p>入力形式　例　2023-08-25 10:00:00</p>
                                 <label for="start_time" class="block text-gray-700 text-xl font-bold mb-2">利用開始日時：</label>
                                 <input type="text" name="start_time" id="start_time" class="border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required>
